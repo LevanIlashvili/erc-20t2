@@ -2,7 +2,7 @@
 
 ### Deferred-Settlement Fungible Token Standard · Reference Implementation
 
-[![EIP](https://img.shields.io/badge/EIP--11547-Draft-blue)](https://github.com/ethereum/EIPs/pull/11547)
+[![ERC](https://img.shields.io/badge/ERC--1693-Draft-blue)](https://github.com/ethereum/ERCs/pull/1693)
 [![Tests](https://img.shields.io/badge/tests-44%2F44-brightgreen)](./test/ERC20T2.t.sol)
 [![Solidity](https://img.shields.io/badge/solidity-%5E0.8.20-lightgrey)](./src/ERC20T2.sol)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
@@ -143,20 +143,18 @@ Between initiation and terminal state, tokens are held by the contract itself. T
 
 The acknowledgment requirement does **not** create new attack surface. It **exposes** attack surface that already existed under ERC-20 (a compromised recipient key), while providing a 48-to-168-hour window during which unauthorised inbound transactions are visible and reversible. That is 48-to-168 hours more than ERC-20 provides.
 
-Full discussion: [`eip-11547.md` §Security Considerations](./eip-11547.md#security-considerations).
+Full discussion: [`erc-1693.md` §Security Considerations](./erc-1693.md#security-considerations).
 
 ---
 
-## EIP Status
+## ERC Status
 
 | Field              | Value                                                                 |
 |--------------------|-----------------------------------------------------------------------|
-| EIP number         | **11547**                                                             |
+| ERC number         | **1693**                                                              |
 | Status             | Draft                                                                 |
-| Category           | Interface                                                             |
-| Pull Request       | [ethereum/EIPs#11547](https://github.com/ethereum/EIPs/pull/11547)    |
-| EIP Walidator      | passing                                                               |
-| Markdown Linter    | passing                                                               |
+| Category           | ERC                                                                   |
+| Pull Request       | [ethereum/ERCs#1693](https://github.com/ethereum/ERCs/pull/1693)      |
 | Tests              | 44 / 44 passing                                                       |
 
 ---
@@ -191,8 +189,8 @@ A companion standard (tentatively ERC-20T2B) is anticipated to introduce holiday
 
 ## Links
 
-- **EIP PR:** https://github.com/ethereum/EIPs/pull/11547
-- **Spec (in-repo):** [`eip-11547.md`](./eip-11547.md)
+- **ERC PR:** https://github.com/ethereum/ERCs/pull/1693
+- **Spec (in-repo):** [`erc-1693.md`](./erc-1693.md)
 - **Interface:** [`src/IERC20T2.sol`](./src/IERC20T2.sol)
 - **Implementation:** [`src/ERC20T2.sol`](./src/ERC20T2.sol)
 - **Test suite:** [`test/ERC20T2.t.sol`](./test/ERC20T2.t.sol)
@@ -202,10 +200,10 @@ A companion standard (tentatively ERC-20T2B) is anticipated to introduce holiday
 ## License
 
 Source code (`src/`, `test/`) — MIT.
-EIP text (`eip-11547.md`) — CC0.
+ERC text (`erc-1693.md`) — CC0.
 
 ---
 
 > *"We note without further comment that this argument is structurally identical to the one underpinning ACH's five-day return window, SWIFT's recall mechanisms, and every other production-grade payment system that has been operating successfully since before the invention of the blockchain."*
 >
-> — EIP-11547, §Motivation
+> — ERC-1693, §Motivation

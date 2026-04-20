@@ -5,7 +5,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 import {IERC20T2} from "./IERC20T2.sol";
 
-/// @title ERC20T2 - Deferred-Settlement Fungible Token (EIP-11547)
+/// @title ERC20T2 - Deferred-Settlement Fungible Token (ERC-1693)
 /// @notice Transfers are a three-phase lifecycle: initiate -> settle (T+2) -> acknowledge (by T+7).
 abstract contract ERC20T2 is IERC20, IERC165, IERC20T2 {
     uint256 public constant SETTLEMENT_PERIOD = 172800;      // T+2
