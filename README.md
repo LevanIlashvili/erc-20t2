@@ -190,6 +190,7 @@ A companion standard (tentatively ERC-20T2B) is anticipated to introduce holiday
 ## Links
 
 - **ERC PR:** https://github.com/ethereum/ERCs/pull/1693
+- **Discussion:** https://ethereum-magicians.org/t/erc-1693-deferred-settlement-fungible-tokens/28295
 - **Spec (in-repo):** [`erc-1693.md`](./erc-1693.md)
 - **Interface:** [`src/IERC20T2.sol`](./src/IERC20T2.sol)
 - **Implementation:** [`src/ERC20T2.sol`](./src/ERC20T2.sol)
