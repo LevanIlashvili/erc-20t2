@@ -28,33 +28,25 @@ This is not a joke.
 
 ## Lifecycle
 
-```
-                                    T+0
-                                     │
-                                     ▼
-                          ┌──────────────────────┐
-                          │   sender.transfer    │
-                          │  debit → in-flight   │
-                          │  emit Initiated      │
-                          └──────────┬───────────┘
-                                     │
-               T+0 ──────────────── T+2 ──────────────── T+7
-                │                    │                    │
-      ┌─────────┴────────┐           │          ┌─────────┴─────────┐
-      │  sender.cancel   │           │          │  anyone.reclaim   │
-      │  sender restored │           │          │  sender restored  │
-      └──────────────────┘           │          └───────────────────┘
-                                     │
-                                     ▼
-                        ┌──────────────────────────┐
-                        │ recipient.acknowledge    │
-                        │ credit recipient         │
-                        │ emit Transfer (ERC-20)   │
-                        └──────────────────────────┘
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> Settling : transfer / transferFrom<br/>(T+0)
 
-            recipient.reject  — callable at any time before terminal
-                               — sender restored
+    Settling --> Claimable : block.timestamp ≥ settlesAt<br/>(T+2)
+    Claimable --> Reclaimable : block.timestamp ≥ expiresAt<br/>(T+7)
 
+    Settling --> Cancelled : sender.cancel()
+    Settling --> Rejected : recipient.reject()
+    Claimable --> Settled : recipient.acknowledge()
+    Claimable --> Rejected : recipient.reject()
+    Reclaimable --> Reclaimed : anyone.reclaim()
+    Reclaimable --> Rejected : recipient.reject()
+
+    Settled --> [*]
+    Cancelled --> [*]
+    Rejected --> [*]
+    Reclaimed --> [*]
 ```
 
 Four terminal outcomes (`Settled`, `Cancelled`, `Rejected`, `Reclaimed`), each of which clears the pending entry. At **no point** in this lifecycle is there an interval during which the tokens are controlled by a single unilateral party. This is intentional.
