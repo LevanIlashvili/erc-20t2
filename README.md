@@ -77,6 +77,16 @@ Expected:
 Suite result: ok. 44 passed; 0 failed; 0 skipped
 ```
 
+## Live on Sepolia
+
+A verified demo deployment is live for kicking the tires:
+
+- **Contract:** [`0x3d8C0620eF32b8c554B37D25C510cb0c6C5F8aD7`](https://sepolia.etherscan.io/address/0x3d8C0620eF32b8c554B37D25C510cb0c6C5F8aD7)
+- **Token:** `T2DEMO` — public `mint(address,uint256)` so anyone can mint themselves some and exercise the lifecycle
+- **Source verified** on Sepolia Etherscan (all functions callable directly from the "Write Contract" tab)
+
+Try it: mint yourself some, `transfer` to another address you control, watch `pendingTransferOf` for 48 hours, then call `acknowledge`. Or `cancel` inside the window. Or `reject`. Or wait 7 days and `reclaim`.
+
 ---
 
 ## Architecture
