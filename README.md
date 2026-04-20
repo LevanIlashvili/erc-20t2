@@ -30,7 +30,7 @@ This is not a joke.
 
 ```mermaid
 stateDiagram-v2
-    direction LR
+    direction TB
     [*] --> Settling : transfer / transferFrom<br/>(T+0)
 
     Settling --> Claimable : block.timestamp ≥ settlesAt<br/>(T+2)
