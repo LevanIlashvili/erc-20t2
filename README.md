@@ -3,6 +3,7 @@
 ### Deferred-Settlement Fungible Token Standard · Reference Implementation
 
 [![ERC](https://img.shields.io/badge/ERC--1693-Draft-blue)](https://github.com/ethereum/ERCs/pull/1693)
+[![CI](https://github.com/LevanIlashvili/erc-20t2/actions/workflows/test.yml/badge.svg)](https://github.com/LevanIlashvili/erc-20t2/actions/workflows/test.yml)
 [![Tests](https://img.shields.io/badge/tests-44%2F44-brightgreen)](./test/ERC20T2.t.sol)
 [![Solidity](https://img.shields.io/badge/solidity-%5E0.8.20-lightgrey)](./src/ERC20T2.sol)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
