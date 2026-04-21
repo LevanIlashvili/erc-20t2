@@ -1,6 +1,6 @@
-# ERC-1693: Deferred-Settlement Fungible Tokens
+# ERC-8236: Deferred-Settlement Fungible Tokens
 
-Opening a discussion thread for **ERC-1693**, a proposed extension to ERC-20 introducing a T+2 settlement period and affirmative bilateral consent between counterparties.
+Opening a discussion thread for **ERC-8236**, a proposed extension to ERC-20 introducing a T+2 settlement period and affirmative bilateral consent between counterparties.
 
 - **PR:** https://github.com/ethereum/ERCs/pull/1693
 - **Reference implementation:** https://github.com/LevanIlashvili/erc-20t2 (Solidity + 44 Foundry tests, MIT)
@@ -9,7 +9,7 @@ Opening a discussion thread for **ERC-1693**, a proposed extension to ERC-20 int
 
 Under ERC-20, `transfer` settles atomically and irrevocably. Between 2020 and 2026, the DeFi ecosystem has lost in excess of **US$12 billion** to exploits whose shared structural feature is same-block settlement: by the time any party becomes aware of an unauthorised transaction, recovery is impossible.
 
-ERC-1693 introduces a lifecycle in which every transfer enters a two-day settlement window (T+2), during which the sender may `cancel` and the recipient may `reject`. Finalisation after T+2 requires the recipient to explicitly `acknowledge`; unacknowledged transfers are automatically reclaimable by the sender after a further five days (T+7).
+ERC-8236 introduces a lifecycle in which every transfer enters a two-day settlement window (T+2), during which the sender may `cancel` and the recipient may `reject`. Finalisation after T+2 requires the recipient to explicitly `acknowledge`; unacknowledged transfers are automatically reclaimable by the sender after a further five days (T+7).
 
 At no point in this lifecycle is there an interval during which the tokens are controlled by a single unilateral party. This is intentional.
 
@@ -28,7 +28,7 @@ A key point elaborated in the spec: sender-side cancellation **alone** is insuff
 
 ## What it breaks (a non-exhaustive list)
 
-- Flash loans over ERC-1693 assets. A flash loan that requires recipient acknowledgment is not a flash loan.
+- Flash loans over ERC-8236 assets. A flash loan that requires recipient acknowledgment is not a flash loan.
 - Silent-receipt integrations: contracts that expect their balance to update on inbound `transfer` without calling `acknowledge` will have those transfers reclaimed at T+7.
 - Market-making strategies assuming immediate settlement of fills.
 - "Send and forget" custodial patterns.

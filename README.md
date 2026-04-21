@@ -2,7 +2,7 @@
 
 ### Deferred-Settlement Fungible Token Standard · Reference Implementation
 
-[![ERC](https://img.shields.io/badge/ERC--1693-Draft-blue)](https://github.com/ethereum/ERCs/pull/1693)
+[![ERC](https://img.shields.io/badge/ERC--8236-Draft-blue)](https://github.com/ethereum/ERCs/pull/1693)
 [![CI](https://github.com/LevanIlashvili/erc-20t2/actions/workflows/test.yml/badge.svg)](https://github.com/LevanIlashvili/erc-20t2/actions/workflows/test.yml)
 [![Tests](https://img.shields.io/badge/tests-44%2F44-brightgreen)](./test/ERC20T2.t.sol)
 [![Solidity](https://img.shields.io/badge/solidity-%5E0.8.20-lightgrey)](./src/ERC20T2.sol)
@@ -146,7 +146,7 @@ Between initiation and terminal state, tokens are held by the contract itself. T
 
 The acknowledgment requirement does **not** create new attack surface. It **exposes** attack surface that already existed under ERC-20 (a compromised recipient key), while providing a 48-to-168-hour window during which unauthorised inbound transactions are visible and reversible. That is 48-to-168 hours more than ERC-20 provides.
 
-Full discussion: [`erc-1693.md` §Security Considerations](./erc-1693.md#security-considerations).
+Full discussion: [`erc-8236.md` §Security Considerations](./erc-8236.md#security-considerations).
 
 ---
 
@@ -154,7 +154,7 @@ Full discussion: [`erc-1693.md` §Security Considerations](./erc-1693.md#securit
 
 | Field              | Value                                                                 |
 |--------------------|-----------------------------------------------------------------------|
-| ERC number         | **1693**                                                              |
+| ERC number         | **8236**                                                              |
 | Status             | Draft                                                                 |
 | Category           | ERC                                                                   |
 | Pull Request       | [ethereum/ERCs#1693](https://github.com/ethereum/ERCs/pull/1693)      |
@@ -194,7 +194,7 @@ A companion standard (tentatively ERC-20T2B) is anticipated to introduce holiday
 
 - **ERC PR:** https://github.com/ethereum/ERCs/pull/1693
 - **Discussion:** https://ethereum-magicians.org/t/erc-1693-deferred-settlement-fungible-tokens/28295
-- **Spec (in-repo):** [`erc-1693.md`](./erc-1693.md)
+- **Spec (in-repo):** [`erc-8236.md`](./erc-8236.md)
 - **Interface:** [`src/IERC20T2.sol`](./src/IERC20T2.sol)
 - **Implementation:** [`src/ERC20T2.sol`](./src/ERC20T2.sol)
 - **Test suite:** [`test/ERC20T2.t.sol`](./test/ERC20T2.t.sol)
@@ -204,10 +204,10 @@ A companion standard (tentatively ERC-20T2B) is anticipated to introduce holiday
 ## License
 
 Source code (`src/`, `test/`) — MIT.
-ERC text (`erc-1693.md`) — CC0.
+ERC text (`erc-8236.md`) — CC0.
 
 ---
 
 > *"We note without further comment that this argument is structurally identical to the one underpinning ACH's five-day return window, SWIFT's recall mechanisms, and every other production-grade payment system that has been operating successfully since before the invention of the blockchain."*
 >
-> — ERC-1693, §Motivation
+> — ERC-8236, §Motivation
